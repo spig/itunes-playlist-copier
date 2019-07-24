@@ -19,10 +19,8 @@ def makeUniqueFile(path):
     while True:
         if os.path.exists(path):
             path = origName + '_' + str(counter) + origExt
-            print(f"path {path}")
             counter += 1
         else:
-            print(f"returning {path}")
             return path
 
 debug = False
