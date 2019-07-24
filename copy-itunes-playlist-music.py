@@ -25,7 +25,7 @@ def makeUniqueFile(path):
             print(f"returning {path}")
             return path
 
-debug = True
+debug = False
 
 if len(sys.argv) < 3:
     print("usage: " + sys.argv[0] + " <itunes-playlist-export-txt-file> <copy-destination>")
@@ -48,7 +48,6 @@ with open(sys.argv[1], newline='', encoding='utf-16') as f:
         musicFile = musicFile[musicFile.find('/'):]
         print(f'musicfile: {musicFile}')
         destFile = os.path.split(musicFile)[1]
-        destFile = "test.mp3"
         destination = os.path.join(destinationFolder, destFile)
         print(f'Destination: {destination}')
         if os.access(musicFile, os.R_OK):
